@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'play_regular';
+    src: url('../fonts/Play-Regular.ttf');
+  }
+  @font-face {
+    font-family: 'poppins_regular';
+    src: url('../fonts/Poppins-Regular.ttf');
+  }
+  body{
+    font-family:  'poppins_regular', sans-serif !important;  
+    font-size: small;
+  }
+  hr.dotted {
+    border-top: 2px dotted #999;
+}
+  .alert-ajax{
+    position: absolute !important;
+    width: 100%;
+  }
+
+  .preview{
+    width: 70px;
+    height:70px;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    padding: 3px;
+}
+.removePic {
+  position: absolute;
+  cursor: pointer;
+  font-size: 20px;
+  margin: -10px 0px 0px -3px;
+}
+.hideBox{
+  display: none;
+}
+
+  
