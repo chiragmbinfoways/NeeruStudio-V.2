@@ -288,7 +288,7 @@
                                                 <label for="name">Order No</label>
                                                 <input type="text"
                                                     class="form-control form-control-sm @error('orderNo') is-invalid @enderror"
-                                                    value="{{ $order_id->order_no }}" id="" readonly name="orderNo"
+                                                    value="{{ $order_id->order_no }}" id=""  name="orderNo"
                                                     placeholder="Enter Order no" value={{ old('orderNo') }}>
                                                 @if ($errors->has('orderNo'))
                                                     <div class="text-danger">{{ $errors->first('orderNo') }}</div>

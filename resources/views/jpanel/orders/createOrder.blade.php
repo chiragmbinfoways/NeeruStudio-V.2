@@ -66,7 +66,7 @@
                                                 <label for="name">Order No</label>
                                                 <input type="text"
                                                     class="form-control form-control-sm @error('orderNo') is-invalid @enderror"
-                                                    value="{{ $last }}" id="orderNo" readonly name="orderNo"
+                                                    value="{{ $last }}" id="orderNo"  name="orderNo"
                                                     placeholder="Enter Order no" value={{ old('orderNo') }}>
                                                 @if ($errors->has('orderNo'))
                                                     <div class="text-danger">{{ $errors->first('orderNo') }}</div>

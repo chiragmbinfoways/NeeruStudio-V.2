@@ -38,13 +38,13 @@ class CustomerController extends Controller
             // 'username' => 'required|unique:users,username',
             // 'password' => 'required',
             'phone' => 'required|unique:users,phone',
-            'email' => 'required|email|unique:users,email',
+            // 'email' => 'required|email|unique:users,email',
             'country' => 'required',
             'state' => 'required',
             'city' => 'required',
-            'address1' => 'required',
-            'address2' => 'required',
-            'zipcode' => 'required',
+            // 'address1' => 'required',
+            // 'address2' => 'required',
+            // 'zipcode' => 'required', 
             
 
         ]);
@@ -93,13 +93,13 @@ class CustomerController extends Controller
             'customerlName' => 'required',
             // 'username' => 'required|email|unique:users,email',
             'phone' => 'required|unique:users,phone,' .$request->user_id,
-            'email' => 'required|email|unique:users,email,' .$request->user_id,
+            // 'email' => 'required|email|unique:users,email,' .$request->user_id,
             'country' => 'required',
             'state' => 'required',
             'city' => 'required',
-            'address1' => 'required',
-            'address2' => 'required',
-            'zipcode' => 'required',
+            // 'address1' => 'required',
+            // 'address2' => 'required',
+            // 'zipcode' => 'required',
         ]);
            
         $user = User::where('id', $request->user_id)->update(['name' => $request->customerfName.' '.$request->customerlname, 'username' => $request->email, 'phone' => $request->phone, 'email' => $request->email]);

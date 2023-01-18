@@ -120,7 +120,6 @@ class OrderController extends Controller
         $quantity = $request->qty;
         $item_total = $request->item_total;
         $indexing = $request->index;
-
         for ($i = 0; $i < count($itemName); $i++) {
 
                 $product = new OrderDetails();
@@ -129,9 +128,9 @@ class OrderController extends Controller
                 $product->rate = $price[$i];
                 $product->quantity = $quantity[$i];
                 $product->item_total = $item_total[$i];
-                $index = $indexing[$i];
                 $product->status = '0';
                 $product->save();
+                $index = $indexing[$i];
                         // Order Measurement 
                 // measurement concatinate with numbers 
                 $b_shoulder="b_shoulder"."$index";
@@ -179,58 +178,58 @@ class OrderController extends Controller
                 $sample="sample"."$index";
                 $design="design"."$index";
                 // measurement concatinate with numbers End
-                $order = new OrderMeasurement();
+                $measurement = new OrderMeasurement();
                 //Blowse
-                $order->order_detail_id = $product->id;
-                $order->b_shoulder = $request->$b_shoulder;
-                $order->b_length = $request->$b_length;
-                $order->b_chest = $request->$b_chest;
-                $order->b_waist = $request->$b_waist;
-                $order->b_chest_up = $request->$b_chest_up;
-                $order->b_Sleeves = $request->$b_Sleeves;
-                $order->b_mori = $request->$b_mori;
-                $order->b_mundo = $request->$b_mundo;
-                $order->b_magismory = $request->$b_magismory;
-                $order->b_front_neck = $request->$b_front_neck;
-                $order->b_back_neck = $request->$b_back_neck;
-                $order->b_other = $request->$b_other;
+                $measurement->order_detail_id = $product->id;
+                $measurement->b_shoulder = $request->$b_shoulder;
+                $measurement->b_length = $request->$b_length;
+                $measurement->b_chest = $request->$b_chest;
+                $measurement->b_waist = $request->$b_waist;
+                $measurement->b_chest_up = $request->$b_chest_up;
+                $measurement->b_Sleeves = $request->$b_Sleeves;
+                $measurement->b_mori = $request->$b_mori;
+                $measurement->b_mundo = $request->$b_mundo;
+                $measurement->b_magismory = $request->$b_magismory;
+                $measurement->b_front_neck = $request->$b_front_neck;
+                $measurement->b_back_neck = $request->$b_back_neck;
+                $measurement->b_other = $request->$b_other;
                 // Kurti/Anarkali/Gaun
-                $order->k_shoulder = $request->$k_shoulder;
-                $order->k_length = $request->$k_length;
-                $order->k_chest = $request->$k_chest;
-                $order->k_waist = $request->$k_waist;
-                $order->k_chest_up = $request->$k_chest_up;
-                $order->k_Sleeves = $request->$k_Sleeves;
-                $order->k_mori = $request->$k_mori;
-                $order->k_mundo = $request->$k_mundo;
-                $order->k_magismory = $request->$k_magismory;
-                $order->k_front_neck = $request->$k_front_neck;
-                $order->k_back_neck = $request->$k_back_neck;
-                $order->k_full_length = $request->$k_full_length;
-                $order->k_kotho = $request->$k_kotho;
-                $order->k_other = $request->$k_other;
+                $measurement->k_shoulder = $request->$k_shoulder;
+                $measurement->k_length = $request->$k_length;
+                $measurement->k_chest = $request->$k_chest;
+                $measurement->k_waist = $request->$k_waist;
+                $measurement->k_chest_up = $request->$k_chest_up;
+                $measurement->k_Sleeves = $request->$k_Sleeves;
+                $measurement->k_mori = $request->$k_mori;
+                $measurement->k_mundo = $request->$k_mundo;
+                $measurement->k_magismory = $request->$k_magismory;
+                $measurement->k_front_neck = $request->$k_front_neck;
+                $measurement->k_back_neck = $request->$k_back_neck;
+                $measurement->k_full_length = $request->$k_full_length;
+                $measurement->k_kotho = $request->$k_kotho;
+                $measurement->k_other = $request->$k_other;
                 //Pant/Salwar/Plazo
-                $order->p_length = $request->$p_length;
-                $order->p_mori = $request->$p_mori;
-                $order->p_nefo = $request->$p_nefo;
-                $order->p_seat = $request->$p_seat;
-                $order->p_thai = $request->$p_thai;
-                $order->p_knee = $request->$p_knee;
-                $order->p_other = $request->$p_other;
+                $measurement->p_length = $request->$p_length;
+                $measurement->p_mori = $request->$p_mori;
+                $measurement->p_nefo = $request->$p_nefo;
+                $measurement->p_seat = $request->$p_seat;
+                $measurement->p_thai = $request->$p_thai;
+                $measurement->p_knee = $request->$p_knee;
+                $measurement->p_other = $request->$p_other;
                 //petticoat
-                $order->pe_length = $request->$pe_length;
-                $order->pe_nefo = $request->$pe_nefo;
-                $order->pe_seat = $request->$pe_seat;
-                $order->pe_gher = $request->$pe_gher;
-                $order->pe_typeof = $request->$pe_typeof;
-                $order->pe_other = $request->$pe_other;
+                $measurement->pe_length = $request->$pe_length;
+                $measurement->pe_nefo = $request->$pe_nefo;
+                $measurement->pe_seat = $request->$pe_seat;
+                $measurement->pe_gher = $request->$pe_gher;
+                $measurement->pe_typeof = $request->$pe_typeof;
+                $measurement->pe_other = $request->$pe_other;
                 //additional items 
-                $order->remarks = $request->$remarks;
-                $order->huk = $request->$huk;
-                $order->pad = $request->$pad;
-                $order->sample = $request->$sample;
-                $order->design = $request->$design;
-                $order->save();
+                $measurement->remarks = $request->$remarks;
+                $measurement->huk = $request->$huk;
+                $measurement->pad = $request->$pad;
+                $measurement->sample = $request->$sample;
+                $measurement->design = $request->$design;
+                $measurement->save();
         }
 
         if ($order) {
@@ -403,6 +402,7 @@ class OrderController extends Controller
         ]);
 
         $order = Order::where('id', $id)->update([
+            'order_no' => $request->orderNo,
             'order_date' => $request->oDate,
             'delivery_date' => $request->dDate,
             'total_amt' => $request->grandTotal,
