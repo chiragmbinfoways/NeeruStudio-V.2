@@ -127,9 +127,14 @@
                                                   class="form-control form-control-sm select2 @error('country') is-invalid @enderror"
                                                   name="country" value={{ old('country') }}>
                                                   <option value="">Select Country</option>
-                                                  <option value="India"
-                                                      @if (old('country') == 'India') {{ 'selected' }} @endif
-                                                      selected>India</option>
+                                                  <option value="India" @if (old('country') == 'India') {{ 'selected' }} @endif selected>India<option>
+                                                  <option value="America" @if (old('country') == 'America') {{ 'selected' }} @endif >America<option>
+                                                  <option value="Australia" @if (old('country') == 'Australia') {{ 'selected' }} @endif >Australia<option>
+                                                  <option value="Denmark" @if (old('country') == 'Denmark') {{ 'selected' }} @endif >Denmark<option>
+                                                  <option value="Denmark" @if (old('country') == 'Denmark') {{ 'selected' }} @endif >Denmark<option>
+                                                  <option value="Malaysia" @if (old('country') == 'Malaysia') {{ 'selected' }} @endif >Malaysia<option>
+                                                  <option value="Taiwan" @if (old('country') == 'Taiwan') {{ 'selected' }} @endif >Taiwan<option>
+                                                  <option value="United Kingdom" @if (old('country') == 'United Kingdom') {{ 'selected' }} @endif >United Kingdom<option>
                                               </select>
                                               @if ($errors->has('country'))
                                                   <div class="text-danger">{{ $errors->first('country') }}</div>
@@ -137,122 +142,10 @@
                                           </div>
                                           <div class="col-md-4 mb-3">
                                               <label for="state">State</label>
-                                              <select
-                                                  class="form-control form-control-sm select2 @error('state') is-invalid @enderror"
-                                                  name="state">
-                                                  <option value="">Select State</option>
-                                                  <option value="AN"
-                                                      @if (old('state') == 'AN') {{ 'selected' }} @endif>Andaman
-                                                      and Nicobar Islands</option>
-                                                  <option value="AP"
-                                                      @if (old('state') == 'AP') {{ 'selected' }} @endif>Andhra
-                                                      Pradesh</option>
-                                                  <option value="AR"
-                                                      @if (old('state') == 'AR') {{ 'selected' }} @endif>
-                                                      Arunachal Pradesh</option>
-                                                  <option value="AS"
-                                                      @if (old('state') == 'AS') {{ 'selected' }} @endif>Assam
-                                                  </option>
-                                                  <option value="BR"
-                                                      @if (old('state') == 'BR') {{ 'selected' }} @endif>Bihar
-                                                  </option>
-                                                  <option value="CH"
-                                                      @if (old('state') == 'CH') {{ 'selected' }} @endif>
-                                                      Chandigarh</option>
-                                                  <option value="CT"
-                                                      @if (old('state') == 'CT') {{ 'selected' }} @endif>
-                                                      Chhattisgarh</option>
-                                                  <option value="DN"
-                                                      @if (old('state') == 'DN') {{ 'selected' }} @endif>Dadra
-                                                      and Nagar Haveli</option>
-                                                  <option value="DD"
-                                                      @if (old('state') == 'DD') {{ 'selected' }} @endif>Daman
-                                                      and Diu</option>
-                                                  <option value="DL"
-                                                      @if (old('state') == 'DL') {{ 'selected' }} @endif>Delhi
-                                                  </option>
-                                                  <option value="GA"
-                                                      @if (old('state') == 'GA') {{ 'selected' }} @endif>Goa
-                                                  </option>
-                                                  <option value="GJ"
-                                                      @if (old('state') == 'GJ') {{ 'selected' }} @endif
-                                                      selected>Gujarat</option>
-                                                  <option value="HR"
-                                                      @if (old('state') == 'HR') {{ 'selected' }} @endif>
-                                                      Haryana</option>
-                                                  <option value="HP"
-                                                      @if (old('state') == 'HP') {{ 'selected' }} @endif>
-                                                      Himachal Pradesh</option>
-                                                  <option value="JK"
-                                                      @if (old('state') == 'JK') {{ 'selected' }} @endif>Jammu
-                                                      and Kashmir</option>
-                                                  <option value="JH"
-                                                      @if (old('state') == 'JH') {{ 'selected' }} @endif>
-                                                      Jharkhand</option>
-                                                  <option value="KA"
-                                                      @if (old('state') == 'KA') {{ 'selected' }} @endif>
-                                                      Karnataka</option>
-                                                  <option value="KL"
-                                                      @if (old('state') == 'KL') {{ 'selected' }} @endif>Kerala
-                                                  </option>
-                                                  <option value="LA"
-                                                      @if (old('state') == 'LA') {{ 'selected' }} @endif>Ladakh
-                                                  </option>
-                                                  <option value="LD"
-                                                      @if (old('state') == 'LD') {{ 'selected' }} @endif>
-                                                      Lakshadweep</option>
-                                                  <option value="MP"
-                                                      @if (old('state') == 'MP') {{ 'selected' }} @endif>Madhya
-                                                      Pradesh</option>
-                                                  <option value="MH"
-                                                      @if (old('state') == 'MH') {{ 'selected' }} @endif>
-                                                      Maharashtra</option>
-                                                  <option value="MN"
-                                                      @if (old('state') == 'MN') {{ 'selected' }} @endif>
-                                                      Manipur</option>
-                                                  <option value="ML"
-                                                      @if (old('state') == 'ML') {{ 'selected' }} @endif>
-                                                      Meghalaya</option>
-                                                  <option value="MZ"
-                                                      @if (old('state') == 'MZ') {{ 'selected' }} @endif>
-                                                      Mizoram</option>
-                                                  <option value="NL"
-                                                      @if (old('state') == 'NL') {{ 'selected' }} @endif>
-                                                      Nagaland</option>
-                                                  <option value="OR"
-                                                      @if (old('state') == 'OR') {{ 'selected' }} @endif>Odisha
-                                                  </option>
-                                                  <option value="PY"
-                                                      @if (old('state') == 'PY') {{ 'selected' }} @endif>
-                                                      Puducherry</option>
-                                                  <option value="PB"
-                                                      @if (old('state') == 'PB') {{ 'selected' }} @endif>Punjab
-                                                  </option>
-                                                  <option value="RJ"
-                                                      @if (old('state') == 'RJ') {{ 'selected' }} @endif>
-                                                      Rajasthan</option>
-                                                  <option value="SK"
-                                                      @if (old('state') == 'SK') {{ 'selected' }} @endif>Sikkim
-                                                  </option>
-                                                  <option value="TN"
-                                                      @if (old('state') == 'TN') {{ 'selected' }} @endif>Tamil
-                                                      Nadu</option>
-                                                  <option value="TG"
-                                                      @if (old('state') == 'TG') {{ 'selected' }} @endif>
-                                                      Telangana</option>
-                                                  <option value="TR"
-                                                      @if (old('state') == 'TR') {{ 'selected' }} @endif>
-                                                      Tripura</option>
-                                                  <option value="UP"
-                                                      @if (old('state') == 'UP') {{ 'selected' }} @endif>Uttar
-                                                      Pradesh</option>
-                                                  <option value="UT"
-                                                      @if (old('state') == 'UT') {{ 'selected' }} @endif>
-                                                      Uttarakhand</option>
-                                                  <option value="WB"
-                                                      @if (old('state') == 'WB') {{ 'selected' }} @endif>West
-                                                      Bengal</option>
-                                              </select>
+                                              <input type="text"
+                                              class="form-control form-control-sm @error('state') is-invalid @enderror"
+                                              id="state" name="state" placeholder="Enter state Name"
+                                              value={{ old('state') }}>
                                               @if ($errors->has('state'))
                                                   <div class="text-danger">{{ $errors->first('state') }}</div>
                                               @endif

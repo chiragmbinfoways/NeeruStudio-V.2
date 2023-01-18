@@ -254,7 +254,7 @@
                         @endif
                         @if(hasPermission('measurement','2'))
                         <li class="nav-item">
-                            <a href="{{ route('list.products') }}" class="nav-link {{ (request()->is('jpanel/order/create')) ? 'active' : '' }}">
+                            <a href="{{ route('list.products') }}" class="nav-link {{ (request()->is('jpanel/products')) ? 'active' : '' }}">
                                 <i class="far fa-list-alt nav-icon"></i>
                                 <p>Task</p>
                             </a>

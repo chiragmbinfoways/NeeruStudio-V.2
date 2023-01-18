@@ -105,6 +105,13 @@
                                             name="country" value={{ old('country') }}>
                                             <option value="">Select Country</option>
                                             <option value="India" @if ($customers->country == "India") {{ 'selected' }} @endif selected>India</option>
+                                            <option value="America" @if ($customers->country == 'America') {{ 'selected' }} @endif >America<option>
+                                            <option value="Australia" @if ($customers->country == 'Australia') {{ 'selected' }} @endif >Australia<option>
+                                            <option value="Denmark" @if ($customers->country == 'Denmark') {{ 'selected' }} @endif >Denmark<option>
+                                            <option value="Denmark" @if ($customers->country == 'Denmark') {{ 'selected' }} @endif >Denmark<option>
+                                            <option value="Malaysia" @if ($customers->country == 'Malaysia') {{ 'selected' }} @endif >Malaysia<option>
+                                            <option value="Taiwan" @if ($customers->country == 'Taiwan') {{ 'selected' }} @endif >Taiwan<option>
+                                            <option value="United Kingdom" @if ($customers->country == 'United Kingdom') {{ 'selected' }} @endif >United Kingdom<option>
                                         </select>
                                         @if ($errors->has('country'))
                                             <div class="text-danger">{{ $errors->first('country') }}</div>
@@ -112,48 +119,10 @@
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label for="state">State</label>
-                                        <select
-                                            class="form-control form-control-sm select2 @error('state') is-invalid @enderror"
-                                            name="state">
-                                            <option value="">Select State</option>
-                                            <option value="AN" @if ($customers->state == "AN") {{ 'selected' }} @endif>Andaman and Nicobar Islands</option>
-                                            <option value="AP" @if ($customers->state == "AP") {{ 'selected' }} @endif>Andhra Pradesh</option>
-                                            <option value="AR" @if ($customers->state == "AR") {{ 'selected' }} @endif>Arunachal Pradesh</option>
-                                            <option value="AS" @if ($customers->state == "AS") {{ 'selected' }} @endif>Assam</option>
-                                            <option value="BR" @if ($customers->state == "BR") {{ 'selected' }} @endif>Bihar</option>
-                                            <option value="CH" @if ($customers->state == "CH") {{ 'selected' }} @endif>Chandigarh</option>
-                                            <option value="CT" @if ($customers->state == "CT") {{ 'selected' }} @endif>Chhattisgarh</option>
-                                            <option value="DN" @if ($customers->state == "DN") {{ 'selected' }} @endif>Dadra and Nagar Haveli</option>
-                                            <option value="DD" @if ($customers->state == "DD") {{ 'selected' }} @endif>Daman and Diu</option>
-                                            <option value="DL" @if ($customers->state == "DL") {{ 'selected' }} @endif>Delhi</option>
-                                            <option value="GA" @if ($customers->state == "GA") {{ 'selected' }} @endif>Goa</option>
-                                            <option value="GJ" @if ($customers->state == "GJ") {{ 'selected' }} @endif selected>Gujarat</option>
-                                            <option value="HR" @if ($customers->state == "HR") {{ 'selected' }} @endif>Haryana</option>
-                                            <option value="HP" @if ($customers->state == "HP") {{ 'selected' }} @endif>Himachal Pradesh</option>
-                                            <option value="JK" @if ($customers->state == "JK") {{ 'selected' }} @endif>Jammu and Kashmir</option>
-                                            <option value="JH" @if ($customers->state == "JH") {{ 'selected' }} @endif>Jharkhand</option>
-                                            <option value="KA" @if ($customers->state == "KA") {{ 'selected' }} @endif>Karnataka</option>
-                                            <option value="KL" @if ($customers->state == "KL") {{ 'selected' }} @endif>Kerala</option>
-                                            <option value="LA" @if ($customers->state == "LA") {{ 'selected' }} @endif>Ladakh</option>
-                                            <option value="LD" @if ($customers->state == "LD") {{ 'selected' }} @endif>Lakshadweep</option>
-                                            <option value="MP" @if ($customers->state == "MP") {{ 'selected' }} @endif>Madhya Pradesh</option>
-                                            <option value="MH" @if ($customers->state == "MH") {{ 'selected' }} @endif>Maharashtra</option>
-                                            <option value="MN" @if ($customers->state == "MN") {{ 'selected' }} @endif>Manipur</option>
-                                            <option value="ML" @if ($customers->state == "ML") {{ 'selected' }} @endif>Meghalaya</option>
-                                            <option value="MZ" @if ($customers->state == "MZ") {{ 'selected' }} @endif>Mizoram</option>
-                                            <option value="NL" @if ($customers->state == "NL") {{ 'selected' }} @endif>Nagaland</option>
-                                            <option value="OR" @if ($customers->state == "OR") {{ 'selected' }} @endif>Odisha</option>
-                                            <option value="PY" @if ($customers->state == "PY") {{ 'selected' }} @endif>Puducherry</option>
-                                            <option value="PB" @if ($customers->state == "PB") {{ 'selected' }} @endif>Punjab</option>
-                                            <option value="RJ" @if ($customers->state == "RJ") {{ 'selected' }} @endif>Rajasthan</option>
-                                            <option value="SK" @if ($customers->state == "SK") {{ 'selected' }} @endif>Sikkim</option>
-                                            <option value="TN" @if ($customers->state == "TN") {{ 'selected' }} @endif>Tamil Nadu</option>
-                                            <option value="TG" @if ($customers->state == "TG") {{ 'selected' }} @endif>Telangana</option>
-                                            <option value="TR" @if ($customers->state == "TR") {{ 'selected' }} @endif>Tripura</option>
-                                            <option value="UP" @if ($customers->state == "UP") {{ 'selected' }} @endif>Uttar Pradesh</option>
-                                            <option value="UT" @if ($customers->state == "UT") {{ 'selected' }} @endif>Uttarakhand</option>
-                                            <option value="WB" @if ($customers->state == "WB") {{ 'selected' }} @endif>West Bengal</option>
-                                        </select>
+                                        <input type="text"
+                                              class="form-control form-control-sm @error('state') is-invalid @enderror"
+                                              id="state" name="state" placeholder="Enter state Name"
+                                              value={{ $customers->state }}>
                                         @if ($errors->has('state'))
                                             <div class="text-danger">{{ $errors->first('state') }}</div>
                                         @endif

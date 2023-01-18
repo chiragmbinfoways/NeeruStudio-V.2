@@ -319,14 +319,13 @@
                                                     value="{{ $order_id->customers->customer_name }}"
                                                     class="border-0 form-control form-control-sm" name="cName">
                                                 <label for="name" class="mt-3"> Order By:</label>
-                                                <input type="text" readonly
-                                                    value="{{ $order_id->customers->number }}"
+                                                <input type="text" readonly value="{{ $order_id->customers->number }}"
                                                     class="border-0 form-control form-control-sm" name="cName">
                                                 <div class=" mt-4">
                                                     <a href="{{ route('create.customers') }}"
                                                         class="btn btn-sm btn-secondary "> Add Customer</a>
                                                 </div>
-                                                
+
                                             </div>
                                             <div class="col-md-8  mb-3 card-body bg-light form-group pl-5">
                                                 <div class="form-row">
@@ -367,7 +366,7 @@
                                     </div>
                                 </div>
 
-                                <table class="table" id="item">
+                                <table class="table" id="items">
                                     <thead class="bg-dark">
                                         <tr class="item">
                                             <th scope="col">Item</th>
@@ -382,20 +381,29 @@
                                     <tbody>
                                         <div>
                                             @foreach ($item as $key => $item)
-                                                <tr class="dataRow{{$item->id}}" >
+                                                <tr class="dataRow{{ $item->id }}">
                                                     <td class="d-none"><input type="text" value="{{ $item->id }}"
                                                             name="item_id[]"></td>
-                                                    <td> <input type="text"
-                                                            class="form-control form-control-sm itemName "
-                                                            aria-label="Small" required value="{{ $item->product_name }}"
-                                                            name="itemname[]" placeholder="Item name"
-                                                            aria-describedby="inputGroup-sizing-sm" id=""></td>
+                                                    <td class="col-md-3">
+                                                        <select class="form-control  itemName  " name="itemname[]"
+                                                            id="selectItem">
+                                                            <option selected value="{{ $item->product_name }}">{{ $item->product_name }} </option>
+                                                            <option value="blowse">Blowse</option>
+                                                            <option value="kurti">Kurti</option>
+                                                            <option value="kurti">Anarkali</option>
+                                                            <option value="kurti">Gaun</option>
+                                                            <option value="pant">Pant</option>
+                                                            <option value="pant">Salwar</option>
+                                                            <option value="pant">Plazo</option>
+                                                            <option value="petticoat">Petticoat</option>
+                                                        </select>
+                                                    </td>
                                                     <td><input type="text" class="form-control form-control-sm price  "
                                                             aria-label="Small" name="price[]"
                                                             value="{{ $item->rate }}" required
                                                             placeholder="Rate per unit"
-                                                            aria-describedby="inputGroup-sizing-sm" onkeydown="getTotal() "
-                                                            id="ppu"></td>
+                                                            aria-describedby="inputGroup-sizing-sm"
+                                                            onkeydown="getTotal() " id="ppu"></td>
                                                     <td> <input type="number" class="form-control form-control-sm  qty"
                                                             aria-label="Small" min="1"
                                                             value="{{ $item->quantity }}" max="100" required
@@ -412,22 +420,21 @@
                                                             aria-describedby="inputGroup-sizing-sm">
                                                     </td>
                                                     <td>
-                                                        <a href="{{ route('product.delete',$item->id) }}"><button type="button" class="form-control form-control-sm"
-                                                        id="delete" aria-label="Small" placeholder="Total Amount"
-                                                        aria-describedby="inputGroup-sizing-sm"><i
-                                                            class="fas fa-trash"></i></button></a>
+                                                        <a href="{{ route('product.delete', $item->id) }}"><button
+                                                                type="button" class="form-control form-control-sm"
+                                                                id="delete" aria-label="Small"
+                                                                placeholder="Total Amount"
+                                                                aria-describedby="inputGroup-sizing-sm"><i
+                                                                    class="fas fa-trash"></i></button></a>
                                                     </td>
                                                 </tr>
-                                                <style>
-
-                                                </style>
                                             @endforeach
                                         </div>
                                     </tbody>
                                 </table>
 
                                 <div class="form-row ">
-                                    <div class="btn btn-secondary bt-lg mb-3 ml-3 addRow"> Add Item</div>
+                                    <div class="btn btn-secondary bt-lg mb-3 ml-3 addmoreRow"> Add Item</div>
                                 </div>
                                 <div class="form-row mt-3">
                                     <div class="col-md-9">
@@ -448,8 +455,8 @@
                                     <div class="col-md-3 mb-3">
                                         <hr>
                                         <h5>Total Amt :&nbsp;₹<b><input class="border-0" type="text" id="grandTotal"
-                                                    readonly name="grandTotal" value=""
-                                                    style="width: 100px;"></b></h5>
+                                                    readonly name="grandTotal" value="" style="width: 100px;"></b>
+                                        </h5>
 
                                         <h5>Advance &nbsp; :&nbsp;₹<b><input class="border-0" type="text"
                                                     id="advance" class="@error('advanceAmt') is-invalid @enderror"
@@ -494,15 +501,13 @@
             </div>
         </div>
     </section>
-   
 @endsection
 
 @section('scripts')
-<script>
-    $(function() {
-    getTotal();
-});
-        
-</script>
+    <script>
+        $(function() {
+            getTotal();
+        });
+    </script>
     @include('jpanel.orders.ajax')
 @endsection
